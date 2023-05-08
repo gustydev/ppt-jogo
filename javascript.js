@@ -28,4 +28,3 @@ function round(playerSelection, computerSelection) {
         return 'você ganhou! Tesoura > Papel'
     }
 }
-
