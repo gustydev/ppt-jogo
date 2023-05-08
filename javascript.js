@@ -1,7 +1,3 @@
-const playerSelection = 'pedra'
-const computerSelection = getComputerChoice()
-console.log(round(playerSelection, computerSelection))
-
 function getComputerChoice() {
     let escolha = Math.floor(Math.random() * 3) // Gerar número 0, 1, 2
     // 0 = Pedra, 1 = Papel, 2 = Tesoura
@@ -15,6 +11,7 @@ function getComputerChoice() {
 }
 
 function round(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
         return 'empate!'
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
@@ -31,3 +28,4 @@ function round(playerSelection, computerSelection) {
         return 'você ganhou! Tesoura > Papel'
     }
 }
+
