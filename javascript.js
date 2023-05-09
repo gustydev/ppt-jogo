@@ -13,19 +13,19 @@ function getComputerChoice() {
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
-        return alert('Empate!')
+        return alert(`Você escolheu ${playerSelection}... e o computador também. Empate!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
-        return alert('Você perdeu! Papel > Pedra')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Papel > Tesoura`)
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
-        return alert('Você ganhou! Pedra > Tesoura')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Pedra > Tesoura`)
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
-        return alert('Você ganhou! Papel > Pedra')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Papel > Pedra`)
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
-        return alert('Você perdeu! Tesoura > Papel')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Tesoura > Papel`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
-        return alert('Você perdeu! Pedra > Tesoura')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Pedra > Tesoura`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
-        return alert('Você ganhou! Tesoura > Papel')
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Tesoura > Papel`)
     }
 }
 
@@ -35,8 +35,6 @@ function jogo() {
     while ( ! (escolhas.includes(playerSelection)) ) {
         playerSelection = prompt('Pedra, papel ou tesoura?').toLowerCase()
     }
-    console.log(`Você escolheu: ${playerSelection}`)
     let computerSelection = getComputerChoice()
-    console.log(`O computador escolheu: ${computerSelection}`)
     return round(playerSelection, computerSelection)
 }
