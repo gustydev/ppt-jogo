@@ -10,6 +10,10 @@ function getComputerChoice() {
     }
 }
 
+// Defining here so the round function knows what to do
+let scorePlayer = 0
+let scoreComp = 0
+
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
@@ -30,8 +34,10 @@ function round(playerSelection, computerSelection) {
 }
 
 function jogo() {
-    let scorePlayer = 0
-    let scoreComp = 0
+    // Reset scores before game
+    scorePlayer = 0
+    scoreComp = 0
+    // Game: first to 5 wins
     while (scorePlayer < 5 || scoreComp < 5) {
         const escolhas = ['pedra', 'papel', 'tesoura']
         let playerSelection
