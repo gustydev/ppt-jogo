@@ -13,19 +13,19 @@ function getComputerChoice() {
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
-        return alert(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
+        return console.log(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        return console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     }
 }
 
