@@ -54,10 +54,11 @@ function jogo() {
         let computerSelection = getComputerChoice()
         round(playerSelection, computerSelection)
     }
-    console.log(`${scorePlayer} jogador, ${scoreComp} computador`)
     if (scorePlayer === 5) {
-        return `Parabéns, você ganhou! Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
-    } else if (scoreComp === 5) {
-        return `Que pena, você perdeu. Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
+        return console.log(`Parabéns, você ganhou!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
+    } else {
+        return console.log(`Que pena, você perdeu. Boa sorte na próxima!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
     }
 }
+
+// Strict equality === is the bane of my existence
