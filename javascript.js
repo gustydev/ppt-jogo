@@ -44,7 +44,7 @@ function jogo() {
     scorePlayer = 0
     scoreComp = 0
     // Game: first to 5 wins
-    while (scorePlayer < 5 && scoreComp < 5) {
+    while ( !(scorePlayer === 5) && !(scoreComp === 5) ) { 
         console.log(`Placar atual: ${scorePlayer} jogador, ${scoreComp} computador`)
         const escolhas = ['pedra', 'papel', 'tesoura']
         let playerSelection
@@ -54,9 +54,10 @@ function jogo() {
         let computerSelection = getComputerChoice()
         round(playerSelection, computerSelection)
     }
-    if (scorePlayer = 5) {
+    console.log(`${scorePlayer} jogador, ${scoreComp} computador`)
+    if (scorePlayer === 5) {
         return `Parabéns, você ganhou! Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
-    } else if (scoreComp = 5) {
+    } else if (scoreComp === 5) {
         return `Que pena, você perdeu. Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
     }
 }
