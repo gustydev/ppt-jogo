@@ -44,7 +44,8 @@ function jogo() {
     scorePlayer = 0
     scoreComp = 0
     // Game: first to 5 wins
-    while (scorePlayer < 5 || scoreComp < 5) {
+    while (scorePlayer < 5 && scoreComp < 5) {
+        console.log(`Placar atual: ${scorePlayer} jogador, ${scoreComp} computador`)
         const escolhas = ['pedra', 'papel', 'tesoura']
         let playerSelection
         while ( ! (escolhas.includes(playerSelection)) ) {
