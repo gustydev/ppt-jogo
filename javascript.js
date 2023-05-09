@@ -54,4 +54,9 @@ function jogo() {
         let computerSelection = getComputerChoice()
         round(playerSelection, computerSelection)
     }
+    if (scorePlayer = 5) {
+        return `Parabéns, você ganhou! Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
+    } else if (scoreComp = 5) {
+        return `Que pena, você perdeu. Placar final: ${scorePlayer} jogador, ${scoreComp} computador`
+    }
 }
