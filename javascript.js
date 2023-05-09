@@ -13,7 +13,7 @@ function getComputerChoice() {
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
-        return alert(`Você escolheu ${playerSelection}... e o computador também. Empate!`)
+        return alert(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
         return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Papel > Tesoura`)
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
