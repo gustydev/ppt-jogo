@@ -15,24 +15,24 @@ function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return alert(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Papel > Tesoura`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Pedra > Tesoura`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Papel > Pedra`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Tesoura > Papel`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu! Pedra > Tesoura`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
-        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou! Tesoura > Papel`)
+        return alert(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
     }
 }
 
 function jogo() {
-    let i = 0
-    while (i < 5) {
-        i++
+    let scorePlayer = 0
+    let scoreComp = 0
+    while (scorePlayer < 5 || scoreComp < 5) {
         const escolhas = ['pedra', 'papel', 'tesoura']
         let playerSelection
         while ( ! (escolhas.includes(playerSelection)) ) {
