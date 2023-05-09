@@ -13,19 +13,19 @@ function getComputerChoice() {
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
-        return 'empate!'
+        return alert('Empate!')
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
-        return 'você perdeu! Papel > Pedra'
+        return alert('Você perdeu! Papel > Pedra')
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
-        return 'você ganhou! Pedra > Tesoura'
+        return alert('Você ganhou! Pedra > Tesoura')
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
-        return 'você ganhou! Papel > Pedra'
+        return alert('Você ganhou! Papel > Pedra')
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
-        return 'você perdeu! Tesoura > Papel'
+        return alert('Você perdeu! Tesoura > Papel')
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
-        return 'você perdeu! Pedra > Tesoura'
+        return alert('Você perdeu! Pedra > Tesoura')
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
-        return 'você ganhou! Tesoura > Papel'
+        return alert('Você ganhou! Tesoura > Papel')
     }
 }
 
