@@ -35,8 +35,8 @@ function jogo() {
     while ( ! (escolhas.includes(playerSelection)) ) {
         playerSelection = prompt('Pedra, papel ou tesoura?').toLowerCase()
     }
-    console.log(playerSelection)
+    console.log(`Você escolheu: ${playerSelection}`)
     let computerSelection = getComputerChoice()
-    console.log(computerSelection)
+    console.log(`O computador escolheu: ${computerSelection}`)
     return round(playerSelection, computerSelection)
 }
