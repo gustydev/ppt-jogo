@@ -19,15 +19,18 @@ const placar = document.querySelector("div.placar");
 const displayPlayerScore = document.querySelector('div.player-score');
 const displayCompScore = document.querySelector('div.comp-score');
 const mensagem = document.querySelector('div.mensagem')
+const result = document.querySelector('div.result')
 
 escolhas.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
-        round(playerSelection, getComputerChoice());
+        if (!(scorePlayer === 5 || scoreComp === 5)) {
+            round(playerSelection, getComputerChoice());
+        }
         if (scorePlayer === 5 && scoreComp < 5) {
-            alert(`Parabéns, você ganhou!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador\n\nAperte OK para jogar novamente.`)
+            result.textContent = `Parabéns, você venceu!`
         } else if (scorePlayer < 5 && scoreComp === 5){
-            alert(`Que pena, você perdeu. Boa sorte na próxima!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador\n\nAperte OK para jogar novamente.`)
+            result.textContent = `Que pena, você perdeu. Boa sorte na próxima!`
         }  
     })
 })    
