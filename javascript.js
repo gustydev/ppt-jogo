@@ -14,6 +14,15 @@ function getComputerChoice() {
 let scorePlayer = 0
 let scoreComp = 0
 
+const escolhas = document.querySelectorAll("button");
+console.log(escolhas);
+
+escolhas.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log('a')
+    })
+})
+
 function round(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
@@ -51,5 +60,3 @@ function jogo() {
         return console.log(`Que pena, você perdeu. Boa sorte na próxima!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
     }
 }
-
-// Strict equality === is the bane of my existence
