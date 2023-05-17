@@ -90,8 +90,3 @@ function round(playerSelection, computerSelection) {
     displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
     displayCompScore.textContent = `Computador: ${scoreComp}`
 }
-
-function jogo() {
-    scorePlayer, scoreComp = 0 // Reset scores before game
-    round(playerSelection, computerSelection);
-}
