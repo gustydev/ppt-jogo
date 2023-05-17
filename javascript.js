@@ -26,29 +26,36 @@ escolhas.forEach((button) => {
 const placar = document.querySelector("div.placar");
 const displayPlayerScore = document.querySelector('div.player-score');
 const displayCompScore = document.querySelector('div.comp-score');
-
+const mensagem = document.querySelector('div.mensagem')
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}... e o computador também.
+                                Empate!`
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
         scoreComp++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+                                Você perdeu!`
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
         scorePlayer++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+                                Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
         scorePlayer++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+                                Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
         scoreComp++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}. 
+                                Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
         scoreComp++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê perdeu!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}. 
+                                Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
         scorePlayer++
-        console.log(`Você escolheu ${playerSelection}.\nO computador escolheu ${computerSelection}.\n\nVocê ganhou!`)
+        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+                                Você ganhou!`
     }
     // After round, update scores
     displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
