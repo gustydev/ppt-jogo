@@ -23,6 +23,16 @@ escolhas.forEach((button) => {
     })
 })    
 
+const placar = document.querySelector("div.placar");
+const displayPlayerScore = document.createElement('div');
+const displayCompScore = document.createElement('div');
+
+displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
+displayCompScore.textContent = `Computador: ${scoreComp}`
+
+placar.appendChild(displayPlayerScore)
+placar.appendChild(displayCompScore)
+
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return console.log(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
