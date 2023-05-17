@@ -15,18 +15,22 @@ let scorePlayer = 0
 let scoreComp = 0
 
 const escolhas = document.querySelectorAll("button");
+const placar = document.querySelector("div.placar");
+const displayPlayerScore = document.querySelector('div.player-score');
+const displayCompScore = document.querySelector('div.comp-score');
+const mensagem = document.querySelector('div.mensagem')
 
 escolhas.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
         round(playerSelection, getComputerChoice());
+        if (scorePlayer === 5 && scoreComp < 5) {
+            alert(`Parabéns, você ganhou!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador\n\nAperte OK para jogar novamente.`)
+        } else if (scorePlayer < 5 && scoreComp === 5){
+            alert(`Que pena, você perdeu. Boa sorte na próxima!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador\n\nAperte OK para jogar novamente.`)
+        }  
     })
 })    
-
-const placar = document.querySelector("div.placar");
-const displayPlayerScore = document.querySelector('div.player-score');
-const displayCompScore = document.querySelector('div.comp-score');
-const mensagem = document.querySelector('div.mensagem')
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -66,16 +70,10 @@ function round(playerSelection, computerSelection) {
     }
     // After round, update scores
     displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
-    displayCompScore.textContent = `Computador: ${scoreComp}`    
+    displayCompScore.textContent = `Computador: ${scoreComp}`
 }
 
 function jogo() {
     scorePlayer, scoreComp = 0 // Reset scores before game
-    let computerSelection = getComputerChoice();
     round(playerSelection, computerSelection);
-    if (scorePlayer === 5) {
-        return console.log(`Parabéns, você ganhou!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
-    } else {
-        return console.log(`Que pena, você perdeu. Boa sorte na próxima!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
-    }
 }
