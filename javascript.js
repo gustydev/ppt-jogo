@@ -30,31 +30,38 @@ const mensagem = document.querySelector('div.mensagem')
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        mensagem.textContent = `Você escolheu ${playerSelection}... e o computador também.
+        mensagem.textContent = `Você escolheu ${playerSelection}... 
+                                e o computador também.
                                 Empate!`
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}.
                                 Você perdeu!`
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}. 
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}. 
                                 Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}. 
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}. 
                                 Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. O computador escolheu ${computerSelection}.
+        mensagem.textContent = `Você escolheu ${playerSelection}. 
+                                O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     }
     // After round, update scores
