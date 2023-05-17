@@ -40,24 +40,11 @@ function round(playerSelection, computerSelection) {
 }
 
 function jogo() {
-    // Reset scores before game
-    scorePlayer = 0
-    scoreComp = 0
-    // Game: first to 5 wins
-    while ( !(scorePlayer === 5) && !(scoreComp === 5) ) { 
-        console.log(`Placar atual: ${scorePlayer} jogador, ${scoreComp} computador`)
-        const escolhas = ['pedra', 'papel', 'tesoura']
-        let playerSelection
-        while ( ! (escolhas.includes(playerSelection)) ) {
-            playerSelection = prompt('Pedra, papel ou tesoura?').toLowerCase()
-            if ( ! (escolhas.includes(playerSelection)) ) {
-                alert('Por favor, insira apenas "pedra", "papel" ou "tesoura".\n\nPS: o jogo não diferencia entre letras maiúsculas ou minúsculas. Por exemplo, tanto "PeDRa" quanto "pedra" são jogadas válidas.')
-                // Perdi
-            }
-        }
-        let computerSelection = getComputerChoice()
-        round(playerSelection, computerSelection)
-    }
+    scorePlayer, scoreComp = 0 // Reset scores before game
+    const escolhas = ['pedra', 'papel', 'tesoura'];
+    let playerSelection
+    let computerSelection = getComputerChoice();
+    round(playerSelection, computerSelection);
     if (scorePlayer === 5) {
         return console.log(`Parabéns, você ganhou!\n\nPlacar final: ${scorePlayer} jogador, ${scoreComp} computador`)
     } else {
