@@ -18,8 +18,21 @@ const escolhas = document.querySelectorAll("button");
 const placar = document.querySelector("div.placar");
 const displayPlayerScore = document.querySelector('div.player-score');
 const displayCompScore = document.querySelector('div.comp-score');
-const mensagem = document.querySelector('div.mensagem')
-const result = document.querySelector('div.result')
+const roundResult = document.querySelector('div.mensagem');
+const finalResult = document.querySelector('div.result');
+
+const playAgain = document.createElement("button");
+playAgain.textContent = 'Jogar novamente'
+
+playAgain.addEventListener('click', () => {
+    scorePlayer = 0;
+    scoreComp = 0;
+    roundResult.textContent = ''
+    displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
+    displayCompScore.textContent = `Computador: ${scoreComp}`
+    finalResult.textContent = ''
+    placar.removeChild(playAgain);
+})
 
 escolhas.forEach((button) => {
     button.addEventListener('click', () => {
@@ -28,46 +41,48 @@ escolhas.forEach((button) => {
             round(playerSelection, getComputerChoice());
         }
         if (scorePlayer === 5 && scoreComp < 5) {
-            result.textContent = `Parabéns, você venceu!`
+            finalResult.textContent = `Parabéns, você venceu!`
+            placar.appendChild(playAgain)
         } else if (scorePlayer < 5 && scoreComp === 5){
-            result.textContent = `Que pena, você perdeu. Boa sorte na próxima!`
+            finalResult.textContent = `Que pena, você perdeu. Boa sorte na próxima!`
+            placar.appendChild(playAgain)
         }  
     })
 })    
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        mensagem.textContent = `Você escolheu ${playerSelection}... 
+        roundResult.textContent = `Você escolheu ${playerSelection}... 
                                 e o computador também.
                                 Empate!`
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}.
                                 Você perdeu!`
     } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}. 
                                 Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
         scoreComp++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}. 
                                 Você perdeu!`
     } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
         scorePlayer++
-        mensagem.textContent = `Você escolheu ${playerSelection}. 
+        roundResult.textContent = `Você escolheu ${playerSelection}. 
                                 O computador escolheu ${computerSelection}.
                                 Você ganhou!`
     }
