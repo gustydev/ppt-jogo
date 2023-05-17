@@ -15,16 +15,15 @@ let scorePlayer = 0
 let scoreComp = 0
 
 const escolhas = document.querySelectorAll("button");
-console.log(escolhas);
 
 escolhas.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log('a')
+        let playerSelection = button.id;
+        round(playerSelection, getComputerChoice());
     })
-})
+})    
 
 function round(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase()
     if (playerSelection === computerSelection) {
         return console.log(`Você escolheu ${playerSelection}... e o computador também.\n\nEmpate!`)
     } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
@@ -50,8 +49,6 @@ function round(playerSelection, computerSelection) {
 
 function jogo() {
     scorePlayer, scoreComp = 0 // Reset scores before game
-    const escolhas = ['pedra', 'papel', 'tesoura'];
-    let playerSelection
     let computerSelection = getComputerChoice();
     round(playerSelection, computerSelection);
     if (scorePlayer === 5) {
