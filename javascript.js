@@ -1,12 +1,12 @@
 function getComputerChoice() {
-    let escolha = Math.floor(Math.random() * 3) // Gerar número 0, 1, 2
-    // 0 = Pedra, 1 = Papel, 2 = Tesoura
-    if (escolha === 0) {
-        return 'pedra'
-    } else if (escolha === 1) {
-        return 'papel'
-    } else if (escolha === 2) {
-        return 'tesoura'
+    let choice = Math.floor(Math.random() * 3) // Gerar número 0, 1, 2
+    // 0 = rock, 1 = paper, 2 = scissors
+    if (choice === 0) {
+        return 'rock'
+    } else if (choice === 1) {
+        return 'paper'
+    } else if (choice === 2) {
+        return 'scissors'
     }
 }
 
@@ -14,79 +14,79 @@ function getComputerChoice() {
 let scorePlayer = 0
 let scoreComp = 0
 
-const escolhas = document.querySelectorAll("button");
-const placar = document.querySelector("div.placar");
+const choices = document.querySelectorAll("button");
+const score = document.querySelector("div.score");
 const displayPlayerScore = document.querySelector('div.player-score');
 const displayCompScore = document.querySelector('div.comp-score');
-const roundResult = document.querySelector('div.mensagem');
+const roundResult = document.querySelector('div.message');
 const finalResult = document.querySelector('div.result');
 
 const playAgain = document.createElement("button");
-playAgain.textContent = 'Jogar novamente'
+playAgain.textContent = 'Play again'
 
 playAgain.addEventListener('click', () => {
     scorePlayer = 0;
     scoreComp = 0;
     roundResult.textContent = ''
-    displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
-    displayCompScore.textContent = `Computador: ${scoreComp}`
+    displayPlayerScore.textContent = `Player: ${scorePlayer}`
+    displayCompScore.textContent = `Computer: ${scoreComp}`
     finalResult.textContent = ''
-    placar.removeChild(playAgain);
+    score.removeChild(playAgain);
 })
 
-escolhas.forEach((button) => {
+choices.forEach((button) => {
     button.addEventListener('click', () => {
         let playerSelection = button.id;
         if (!(scorePlayer === 5 || scoreComp === 5)) {
             round(playerSelection, getComputerChoice());
         }
         if (scorePlayer === 5 && scoreComp < 5) {
-            finalResult.textContent = `Parabéns, você venceu!`
-            placar.appendChild(playAgain)
+            finalResult.textContent = `Congratulations, you won!`
+            score.appendChild(playAgain)
         } else if (scorePlayer < 5 && scoreComp === 5){
-            finalResult.textContent = `Que pena, você perdeu. Boa sorte na próxima!`
-            placar.appendChild(playAgain)
+            finalResult.textContent = `You lost. Better luck next time!`
+            score.appendChild(playAgain)
         }  
     })
 })    
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        roundResult.textContent = `Você escolheu ${playerSelection}... 
-                                e o computador também.
-                                Empate!`
-    } else if (playerSelection === 'pedra' && computerSelection === 'papel') {
+        roundResult.textContent = `You picked ${playerSelection}... 
+                                and so did the computer.
+                                It's a tie!`
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
         scoreComp++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}.
-                                Você perdeu!`
-    } else if (playerSelection === 'pedra' && computerSelection === 'tesoura') {
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}.
+                                You lost!`
+    } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
         scorePlayer++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}.
-                                Você ganhou!`
-    } else if (playerSelection === 'papel' && computerSelection === 'pedra') {
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}.
+                                You won!`
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
         scorePlayer++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}.
-                                Você ganhou!`
-    } else if (playerSelection === 'papel' && computerSelection === 'tesoura') {
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}.
+                                You won!`
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
         scoreComp++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}. 
-                                Você perdeu!`
-    } else if (playerSelection === 'tesoura' && computerSelection === 'pedra') {
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}. 
+                                You lost!`
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
         scoreComp++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}. 
-                                Você perdeu!`
-    } else if (playerSelection === 'tesoura' && computerSelection === 'papel') {
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}. 
+                                You lost!`
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
         scorePlayer++
-        roundResult.textContent = `Você escolheu ${playerSelection}. 
-                                O computador escolheu ${computerSelection}.
-                                Você ganhou!`
+        roundResult.textContent = `You picked ${playerSelection}. 
+                                The computer picked ${computerSelection}.
+                                You won!`
     }
     // After round, update scores
-    displayPlayerScore.textContent = `Jogador: ${scorePlayer}`
-    displayCompScore.textContent = `Computador: ${scoreComp}`
+    displayPlayerScore.textContent = `Player: ${scorePlayer}`
+    displayCompScore.textContent = `Computer: ${scoreComp}`
 }
