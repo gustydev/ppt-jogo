@@ -1,2 +1,2 @@
-# ppt-jogo
-Um jogo de Pedra, Papel e Tesoura feito em Javascript e jogável pelo console.
+# Rock, Paper, Scissors
+A version of the classic game Rock, Paper, Scissors playable on the browser. Made with JavaScript.
